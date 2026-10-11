@@ -1,30 +1,19 @@
-import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
+import HomePage from "./pages/HomePage";
 
 function App() {
-  const [message, setMessage] = useState("서버 연결 중...");
-
-  useEffect(() => {
-    fetch("http://localhost:5000/api/hello")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("API 요청 실패");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setMessage(data.message);
-      })
-      .catch((error) => {
-        console.error(error);
-        setMessage("백엔드 연결 실패");
-      });
-  }, []);
-
   return (
-    <main style={{ padding: "40px" }}>
-      <h1>Toy Project</h1>
-      <p>{message}</p>
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
