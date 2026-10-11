@@ -25,12 +25,6 @@ cd <프로젝트_폴더>
 git switch malakas
 ```
 
-현우:
-
-```bash
-git switch -c hyunwoo
-```
-
 ## 3. 개발 및 Push
 
 작업한 내용을 자유롭게 커밋하고 원격 저장소에 Push한다.
@@ -38,7 +32,7 @@ git switch -c hyunwoo
 ```bash
 git add .
 git commit -m "커밋 메시지"
-git push -u origin jomungi
+git push -u origin ""
 ```
 
 최초 Push 이후에는 다음 명령어를 사용한다.
@@ -46,7 +40,7 @@ git push -u origin jomungi
 ```bash
 git add .
 git commit -m "커밋 메시지"
-git push
+git push origin ""
 ```
 
 ## 4. 코드 병합
@@ -65,3 +59,4 @@ git push
 - 다른 사람의 작업 내용을 덮어쓰지 않도록 주의한다.
 - 병합 전 변경 사항을 확인한다.
 조문기 테스트
+- malakas -> 수정 test
